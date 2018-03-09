@@ -9,6 +9,8 @@ def files_in_dir(dirname='.'):
     result = []
     for entry in os.listdir(dirname):
         if os.path.isdir(entry):
+            if entry == '.git':
+                continue
             result += files_in_dir(entry)
         else:
             newentry = os.path.join(dirname,entry)
@@ -126,7 +128,7 @@ script_name = os.path.basename(__file__)
 theme_name = "CustomTheme.txt"
 dmenu_patchname = 'dmenu-lineheight-4.7.diff'
 required = ['xmonad','xmobar','dmenu','compton','feh']
-ignore_copy = [script_name, theme_name, dmenu_patchname]
+ignore_copy = [script_name, theme_name, dmenu_patchname, 'README.md']
 ignore_preprocessing = ['jpg', 'svg', 'png', 'ttf']
 dmenu_patched_install(dmenu_patchname)
 
@@ -152,6 +154,7 @@ print('preprocess files ok')
 print('start recompile')
 bash_exec('xmonad --recompile')
 print('restart')
+print('need sudo to refresh font cache')
+bash_exec('sudo fc-cache -fv ' + os.path.join(get_install_dir(config),'.fonts')) #reload fonts
 bash_exec('xmonad --restart')
-#bash_exec('sudo fc-cache -fv')
 print('finished')
