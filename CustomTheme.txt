@@ -1,0 +1,18 @@
+#install
+path = ~
+
+
+#screen
+screenWidth = 1366
+#colors
+mainThemeColor = #66cc66
+inactiveThemeColor = #666666
+activeThemeColor = #ffffff
+backgroundColor = #000000
+#fonts
+mainFontName = xft:Inconsolata LGC:size=9:antialias=true
+smallFontName = xft:Inconsolata LGC:size=6:antialias=true
+mainFontNoXftName = Inconsolata LGC:size=9:antialias=true
+
+#height of xmobar and gaps
+barHeight = 18

@@ -1,0 +1,4 @@
+xrdb -load {{path}}/.urxvt/.Xresources
+feh --bg-scale {{path}}/.xmonad/wallpaper.jpg
+compton -b
+

@@ -1,0 +1,25 @@
+URxvt.background: [85]{{backgroundColor}}
+URxvt.foreground: {{activeThemeColor}}
+URxvt.fadecolor: {{backgroundColor}}
+URxvt.depth: 32
+URxvt.fade: 40
+URxvt.font: {{mainFontName}}
+URxvt.letterSpace: -2
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+!URxvt.scrollBar: false
+URxvt.scrollBar_floating: true
+URxvt.scrollColor: {{mainThemeColor}}
+URxvt.scrollstyle: plain
+URxvt.thickness: 1
+URxvt.scrollBar_right: true
+
+URxvt.cursorBlink: true
+
+URxvt.iconFile:Terminal.png
+
