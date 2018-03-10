@@ -5,6 +5,8 @@ import fileinput
 import re
 import subprocess
 
+assert sys.version_info.major >= 3
+
 def files_in_dir(dirname='.'):
     result = []
     for entry in os.listdir(dirname):
@@ -127,7 +129,7 @@ print('python version ok')
 script_name = os.path.basename(__file__)
 theme_name = "CustomTheme.txt"
 dmenu_patchname = 'dmenu-lineheight-4.7.diff'
-required = ['xmonad','xmobar','dmenu','compton','feh']
+required = ['xmonad','xmobar','dmenu','compton','feh', 'urxvt']
 ignore_copy = [script_name, theme_name, dmenu_patchname, 'README.md']
 ignore_preprocessing = ['jpg', 'svg', 'png', 'ttf']
 dmenu_patched_install(dmenu_patchname)
