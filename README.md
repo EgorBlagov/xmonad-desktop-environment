@@ -10,5 +10,5 @@ python3 install.py
 ```
  
 ### Tips
-- Patched dmenu is required to adjust dmenu height. https://tools.suckless.org/dmenu/patches/line-heighte 
+- Patched dmenu is required to adjust dmenu height. https://tools.suckless.org/dmenu/patches/line-height 
 - Customized variables are replaced with variables from config ('CustomTheme.txt'). Script searches for mustaches (```{{varname}}```) in files and replaces all occurrences.
