@@ -58,9 +58,9 @@ import XMonad.Hooks.SetWMName
 
 layoutChange = "{{path}}/.xmonad/layout.sh" 
 
-dmenuRun = "dmenu_path | dmenu -h {{barHeight}} -nf " ++ show "{{inactiveThemeColor}}" ++ " -sb " ++ show "{{mainThemeColor}}" ++ " -nb black -sf "  ++ show "{{activeThemeColor}}" ++ " -fn " ++ show "{{mainFontNoXftName}}"
+dmenuRun = "dmenu_path | dmenu \"$@\"-h {{barHeight}} -nf " ++ show "{{inactiveThemeColor}}" ++ " -sb " ++ show "{{mainThemeColor}}" ++ " -nb black -sf "  ++ show "{{activeThemeColor}}" ++ " -fn " ++ show "{{mainFontNoXftName}}" ++ " | ${SHELL:-\"/bin/sh\"}"
 
-customWorkspaces = ["1:term", "2:com", "3:net", "4:dev" ]
+customWorkspaces = ["1:term", "2:com", "3:net", "4:dev", "5:mus"]
 
 -- tab theme default
 tabConfig = defaultTheme {
