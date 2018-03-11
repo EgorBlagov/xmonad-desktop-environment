@@ -7,7 +7,7 @@ import Graphics.X11.Xlib
 import Graphics.X11.ExtraTypes.XF86
 import System.IO (Handle, hPutStrLn)
 import qualified System.IO
-import XMonad.Actions.CycleWS (nextScreen,prevScreen)
+import XMonad.Actions.CycleWS
 import Data.List
  
 
@@ -58,7 +58,7 @@ import XMonad.Hooks.SetWMName
 
 layoutChange = "{{path}}/.xmonad/layout.sh" 
 
-dmenuRun = "dmenu_path | dmenu \"$@\"-h {{barHeight}} -nf " ++ show "{{inactiveThemeColor}}" ++ " -sb " ++ show "{{mainThemeColor}}" ++ " -nb black -sf "  ++ show "{{activeThemeColor}}" ++ " -fn " ++ show "{{mainFontNoXftName}}" ++ " | ${SHELL:-\"/bin/sh\"}"
+dmenuRun = "dmenu_run -h " ++ show {{barHeight}} ++ " -nf " ++ show "{{inactiveThemeColor}}" ++ " -sb " ++ show "{{backgroundColor}}" ++ " -nb black -sf "  ++ show "{{activeThemeColor}}" ++ " -fn " ++ show "{{mainFontNoXftName}}"
 
 customWorkspaces = ["1:term", "2:com", "3:net", "4:dev", "5:mus"]
 
@@ -118,11 +118,15 @@ main = do
           , ppHidden = xmobarColor "{{mainThemeColor}}" "" . pad 
           , ppHiddenNoWindows  = xmobarColor "{{inactiveThemeColor}}" "" . pad . workspaceFilter
           , ppSep = " "
-          , ppLayout = xmobarColor "{{activeThemeColor}}" "{{mainThemeColor}}" . pad . layoutHard 
+          , ppLayout = xmobarColor "{{mainThemeColor}}" "" . wrap ":" ":" . layoutHard 
         }
 
         } `additionalKeys` [
     	((mod4Mask, xK_p), spawn dmenuRun),
-    	((mod1Mask, xK_Shift_L), spawn layoutChange)]
+    	((mod1Mask, xK_Shift_L), spawn layoutChange),
+      ((mod4Mask, xK_Right), nextWS),
+      ((mod4Mask, xK_Left), prevWS),
+      ((mod4Mask .|. shiftMask, xK_Right), shiftToNext >> nextWS),
+      ((mod4Mask .|. shiftMask, xK_Left), shiftToPrev >> prevWS)]
 
 
