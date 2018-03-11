@@ -60,7 +60,7 @@ layoutChange = "{{path}}/.xmonad/layout.sh"
 
 dmenuRun = "dmenu_run -h " ++ show {{barHeight}} ++ " -nf " ++ show "{{inactiveThemeColor}}" ++ " -sb " ++ show "{{backgroundColor}}" ++ " -nb black -sf "  ++ show "{{activeThemeColor}}" ++ " -fn " ++ show "{{mainFontNoXftName}}"
 
-customWorkspaces = ["1:term", "2:com", "3:net", "4:dev", "5:mus"]
+customWorkspaces = ["term", "com", "net", "dev", "mus"]
 
 -- tab theme default
 tabConfig = defaultTheme {
@@ -114,9 +114,9 @@ main = do
         , logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor "{{inactiveThemeColor}}" "" . shorten 100
-          , ppCurrent = xmobarColor "{{activeThemeColor}}" "" . wrap "[" "]" 
-          , ppHidden = xmobarColor "{{mainThemeColor}}" "" . pad 
-          , ppHiddenNoWindows  = xmobarColor "{{inactiveThemeColor}}" "" . pad . workspaceFilter
+          , ppCurrent = xmobarColor "{{activeThemeColor}}" "" . wrap "#" ""
+          , ppHidden = xmobarColor "{{mainThemeColor}}" "" . wrap " " ""
+          , ppHiddenNoWindows  = xmobarColor "{{inactiveThemeColor}}" "" . wrap " " "" . workspaceFilter
           , ppSep = " "
           , ppLayout = xmobarColor "{{mainThemeColor}}" "" . wrap ":" ":" . layoutHard 
         }
@@ -129,4 +129,5 @@ main = do
       ((mod4Mask .|. shiftMask, xK_Right), shiftToNext >> nextWS),
       ((mod4Mask .|. shiftMask, xK_Left), shiftToPrev >> prevWS)]
 
+-- #term com net dev mus
 
