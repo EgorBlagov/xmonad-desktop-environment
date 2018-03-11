@@ -78,12 +78,6 @@ customLayoutHook = gaps [(U, {{barHeight}})] $ toggleLayouts (noBorders Full) $ 
     delta = 1/100
     ratio = 3/5
 
--- Color of current window title in xmobar.
-xmobarTitleColor = "#FFB6B0"
-
--- Color of current workspace in xmobar.
-xmobarCurrentWorkspaceColor = "red"
-
 xmobarCommand = "xmobar -f " ++ show "{{mainFontName}}" ++  " -B " ++ show "{{backgroundColor}}" ++
                 " -F " ++ show "{{mainThemeColor}}" ++ " {{path}}/.xmonad/xmobar.hs"
 
@@ -128,6 +122,4 @@ main = do
       ((mod4Mask, xK_Left), prevWS),
       ((mod4Mask .|. shiftMask, xK_Right), shiftToNext >> nextWS),
       ((mod4Mask .|. shiftMask, xK_Left), shiftToPrev >> prevWS)]
-
--- #term com net dev mus
 

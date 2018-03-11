@@ -129,13 +129,14 @@ print('python version ok')
 script_name = os.path.basename(__file__)
 theme_name = "CustomTheme.txt"
 dmenu_patchname = 'dmenu-lineheight-4.7.diff'
-required = ['xmonad','xmobar','dmenu','compton','feh', 'urxvt']
+required = ['xmonad', 'xmobar', 'compton', 'feh', 'urxvt']
 ignore_copy = [script_name, theme_name, dmenu_patchname, 'README.md']
 ignore_preprocessing = ['jpg', 'svg', 'png', 'ttf']
-dmenu_patched_install(dmenu_patchname)
 
 check_required(required)
 print('required ok')
+
+dmenu_patched_install(dmenu_patchname)
 
 config = read_theme(theme_name)
 print('theme read ok')
