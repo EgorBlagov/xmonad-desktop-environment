@@ -5,8 +5,6 @@ import fileinput
 import re
 import subprocess
 
-assert sys.version_info.major >= 3
-
 def files_in_dir(dirname='.'):
     result = []
     for entry in os.listdir(dirname):
@@ -28,11 +26,12 @@ def check_version():
 def check_required(required):
     all_good = True
     for soft in required:
-        if len(shutil.which(soft)) == 0:
-            print('\t%s is not installed' % soft)
-            all_good = False
-        else:
-            print('\t%s is ok' % soft)
+        try:
+            if len(shutil.which(soft)) != 0:
+                print('\t%s is ok' % soft)
+        except Exception as e: 
+                print('\t%s is not installed' % soft)
+                all_good = False
     if not all_good:
         raise Exception('Cannot continue')
     
