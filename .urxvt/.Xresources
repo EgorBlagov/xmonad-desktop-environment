@@ -4,7 +4,7 @@ URxvt.fadecolor: {{backgroundColor}}
 URxvt.depth: 32
 URxvt.fade: 40
 URxvt.font: {{mainFontName}}
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 
 Xft.dpi:        96
 Xft.antialias:  true

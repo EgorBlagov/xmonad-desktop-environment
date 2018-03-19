@@ -10,9 +10,9 @@ inactiveThemeColor = #666666
 activeThemeColor = #ffffff
 backgroundColor = #000000
 #fonts
-mainFontName = xft:Inconsolata LGC:size=9:antialias=true
-smallFontName = xft:Inconsolata LGC:size=6:antialias=true
-mainFontNoXftName = Inconsolata LGC:size=9:antialias=true
+mainFontName = xft:Monospace:size=9:antialias=true
+smallFontName = xft:Monospace:size=6:antialias=true
+mainFontNoXftName = Monospace:size=9:antialias=true
 
 #height of xmobar and gaps
 barHeight = 18
