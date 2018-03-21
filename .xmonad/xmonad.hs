@@ -119,6 +119,7 @@ main = do
         } `additionalKeys` [
     	((mod4Mask, xK_p), spawn dmenuRun),
     	((mod1Mask, xK_Shift_L), spawn layoutChange),
+      ((shiftMask, xK_Alt_L), spawn layoutChange),
       ((mod4Mask, xK_Right), nextWS),
       ((mod4Mask, xK_Left), prevWS),
       ((mod4Mask .|. shiftMask, xK_Right), shiftToNext >> nextWS),
