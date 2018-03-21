@@ -101,6 +101,7 @@ main = do
         , borderWidth = 2
         , normalBorderColor = "{{backgroundColor}}"
         , focusedBorderColor = "{{mainThemeColor}}"
+        , handleEventHook = fullscreenEventHook
         , layoutHook = customLayoutHook
         , startupHook = setWMName "LG3D"
         , workspaces = customWorkspaces
