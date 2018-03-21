@@ -3,7 +3,7 @@ path = ~
 
 
 #screen
-screenWidth = 1366
+screenWidth = 1920 
 #colors
 mainThemeColor = #66cc66
 inactiveThemeColor = #666666
