@@ -8,12 +8,12 @@ import subprocess
 def files_in_dir(dirname='.'):
     result = []
     for entry in os.listdir(dirname):
-        if os.path.isdir(entry):
+        newentry = os.path.join(dirname,entry)
+        if os.path.isdir(newentry):
             if entry == '.git':
                 continue
-            result += files_in_dir(entry)
+            result += files_in_dir(newentry)
         else:
-            newentry = os.path.join(dirname,entry)
             if newentry.startswith('./'):
                 newentry = newentry[2:]
             result.append(newentry)
