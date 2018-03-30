@@ -9,10 +9,12 @@ mainThemeColor = #66cc66
 inactiveThemeColor = #666666
 activeThemeColor = #ffffff
 backgroundColor = #000000
+workspaces = "dev[0]", "dev[1]", "dev[2]", "dev[3]", "term", "com", "net"
 #fonts
-mainFontName = xft:Monospace:size=9:antialias=true
-smallFontName = xft:Monospace:size=6:antialias=true
-mainFontNoXftName = Monospace:size=9:antialias=true
+mainFontName = xft:Ubuntu Mono derivative Powerline:size=11:antialias=true
+smallFontName = xft:Ubuntu Mono derivative Powerline:size=9:antialias=true
+mainFontNoXftName = Ubuntu Mono derivative Powerline:size=11:antialias=true
 
 #height of xmobar and gaps
 barHeight = 18
+

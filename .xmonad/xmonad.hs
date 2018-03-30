@@ -60,7 +60,7 @@ layoutChange = "{{path}}/.xmonad/layout.sh"
 
 dmenuRun = "dmenu_run -h " ++ show {{barHeight}} ++ " -nf " ++ show "{{inactiveThemeColor}}" ++ " -sb " ++ show "{{backgroundColor}}" ++ " -nb black -sf "  ++ show "{{activeThemeColor}}" ++ " -fn " ++ show "{{mainFontNoXftName}}"
 
-customWorkspaces = ["term", "com", "net", "dev", "mus"]
+customWorkspaces = [{{workspaces}}]
 
 -- tab theme default
 tabConfig = defaultTheme {
